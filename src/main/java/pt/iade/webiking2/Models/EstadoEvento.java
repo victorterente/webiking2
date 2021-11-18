@@ -12,7 +12,7 @@ public class EstadoEvento {
             @Column(name="evento_estado") private String estado;
             
 			
-            public void estadoEvento() {}
+           
 
 			public String getEstado() {
 				return estado;

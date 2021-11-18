@@ -13,7 +13,7 @@ public class EstadoReserva {
             @Column(name="reserva_estado") private String estado;
             
 			
-            public void estadoReserva() {}
+           
 
 			public String getEstado() {
 				return estado;

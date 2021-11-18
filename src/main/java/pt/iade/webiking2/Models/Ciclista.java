@@ -1,7 +1,5 @@
 package pt.iade.webiking2.Models;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 
 @Entity
-@Table(name = "ciclistas")
+@Table(name = "ciclista")
 public class Ciclista {
     @Id @GeneratedValue
     (strategy = GenerationType.IDENTITY)
@@ -19,11 +17,6 @@ public class Ciclista {
             @Column(name="ciclista_numero") private int numero;
 			@Column(name="ciclista_email") private int email;
 
-        
-			
-			private List<Evento> eventos;
-
-            
 			public String getNome() {
 				return nome;
 			}
@@ -34,11 +27,6 @@ public class Ciclista {
             public int getEmail() {
 				return email;
 			}
-
-			public List<Evento> getEventos() {
-				return eventos;
-			}
-
 			public int getCiclistaid() {
 				return ciclistaid;
 			}
