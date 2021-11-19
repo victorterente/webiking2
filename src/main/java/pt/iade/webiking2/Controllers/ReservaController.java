@@ -35,7 +35,7 @@ public Iterable<Reserva> getReserva() {
 
 
 @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-public Optional<Reserva> getClienteById(@PathVariable Integer id) {
+public Optional<Reserva> getReservaById(@PathVariable Integer id) {
     logger.info("Sending reserva with id:"+ id);
     return reservaRepository.findById(id);
 }

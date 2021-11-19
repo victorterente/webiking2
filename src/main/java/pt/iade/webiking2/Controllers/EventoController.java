@@ -32,7 +32,7 @@ public class EventoController {
 
 
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Evento> getAdById(@PathVariable Integer id) {
+    public Optional<Evento> getEventoById(@PathVariable Integer id) {
         logger.info("Sending eventos where id is" + id);
         return eventoRepository.findById(id);
     }

@@ -31,7 +31,7 @@ public class CiclistaController {
    
    
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Ciclista> getClienteById(@PathVariable Integer id) {
+    public Optional<Ciclista> getCiclistaById(@PathVariable Integer id) {
         logger.info("Sending ciclista with id:"+ id);
         return ciclistaRepository.findById(id);
     }

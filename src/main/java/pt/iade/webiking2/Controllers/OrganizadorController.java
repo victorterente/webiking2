@@ -30,7 +30,7 @@ public class OrganizadorController {
     }
 
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Organizador> getClienteById(@PathVariable Integer id) {
+    public Optional<Organizador> getOrganizadorById(@PathVariable Integer id) {
         logger.info("Sending organizador with id:"+ id);
         return organizadorRepository.findById(id);
     }
