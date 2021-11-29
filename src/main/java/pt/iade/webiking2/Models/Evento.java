@@ -17,25 +17,38 @@ import javax.persistence.Table;
             @Column(name="evento_origem") private String origem;
             @Column(name="evento_destino") private String destino;
             @Column(name="evento_participantes") private int participantes;
-            @Column(name="evento_descricao") private String descricao;
-
-            public int getId() {
+            @Column(name="evento_desc") private String descricao;
+            
+           
+           
+           
+            public int getEventoid() {
                 return eventoid;
             }
-
+           
             public String getOrigem() {
                 return origem;
             }
-
-        
+            
             public String getDestino() {
                 return destino;
             }
-
+        
             public int getParticipantes() {
                 return participantes;
             }
-            public String getdescricao() {
+           
+            public String getDescricao() {
                 return descricao;
             }
-    }
+           
+            
+            
+
+        }
+            
+            
+            
+
+
+           

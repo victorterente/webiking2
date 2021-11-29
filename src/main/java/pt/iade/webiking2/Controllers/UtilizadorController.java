@@ -9,27 +9,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pt.iade.webiking2.Models.Evento;
-import pt.iade.webiking2.Models.Repositories.EventoRepository;
+import pt.iade.webiking2.Models.Utilizador;
+import pt.iade.webiking2.Models.Repositories.UtilizadorRepository;
 
 @RestController
-@RequestMapping(path="/api/evento")
-public class EventoController {
-    private Logger logger = LoggerFactory.getLogger(EventoController.class);
+@RequestMapping(path="/api/utilizador")
+
+public class UtilizadorController {
+    private Logger logger = LoggerFactory.getLogger(UtilizadorController.class);
     @Autowired
-    private EventoRepository eventoRepository;
+    private UtilizadorRepository utilizadorRepository;
 
     @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Evento> getEvento() {
-        logger.info("Sending all eventos");
-        
-        return eventoRepository.findAll();
-
+    public Iterable<Utilizador> getUtilizador() {
+        logger.info("Sending all utilizadores");
+        return utilizadorRepository.findAll();
     }
-
+   
+   
+   
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Evento> getEventoById(@PathVariable Integer id) {
-        logger.info("Sending evento with id:"+ id);
-        return eventoRepository.findById(id);
+    public Optional<Utilizador> getUtilizadorById(@PathVariable Integer id) {
+        logger.info("Sending utilizador with id:"+ id);
+        return utilizadorRepository.findById(id);
     }
+
+
+
+
 }

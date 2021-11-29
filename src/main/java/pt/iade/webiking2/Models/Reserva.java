@@ -14,10 +14,9 @@ import javax.persistence.Table;
     public class Reserva{
         @Id @GeneratedValue
             (strategy = GenerationType.IDENTITY)
-            @Column(name="reserva_id") private int reservaid;
-            @Column(name="reserva_tipobicicleta") private String tipoBicicleta;
+            @Column(name="reserva_id") private int reservaid;           
             @Column(name="reserva_preco") private double preco;
-            @Column(name="reserva_descricao") private String descricao;
+           
 
             
             public Reserva() {}
@@ -30,10 +29,6 @@ import javax.persistence.Table;
                 return preco;
             }
 
-            public String getTipoBicicleta() {
-                return tipoBicicleta;
-            }
-            public String getDescricao() {
-                return descricao;
-            }
+            
+           
     }
