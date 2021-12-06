@@ -1,6 +1,6 @@
 package pt.iade.webiking2.Models;
 
-import java.sql.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,8 @@ public class Utilizador {
     @Id @GeneratedValue
     (strategy = GenerationType.IDENTITY)
             @Column(name="utilizador_id") private int utilizadorid;
-            @Column(name="utilizador_dtnasc") private Date dtnasc;
+			@Column(name="utilizador_nome") private String nome;
+            @Column(name="utilizador_dtnasc") private String dtnasc;
 			@Column(name="utilizador_genero") private String genero;
 			@Column(name="utilizador_email") private String email;
 			@Column(name="utilizador_pass") private String pass;
@@ -24,11 +25,51 @@ public class Utilizador {
 			
 
 			
+			public String getNome() {
+				return nome;
+			}
+
+			
+			public void setUtilizadorid(int utilizadorid) {
+				this.utilizadorid = utilizadorid;
+			}
+
+
+			public void setNome(String nome) {
+				this.nome = nome;
+			}
+
+
+			public void setDtnasc(	String dtnasc) {
+				this.dtnasc = dtnasc;
+			}
+
+
+			public void setGenero(String genero) {
+				this.genero = genero;
+			}
+
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+
+			public void setPass(String pass) {
+				this.pass = pass;
+			}
+
+
+			public void setTelemovel(int telemovel) {
+				this.telemovel = telemovel;
+			}
+
+
 			public int getUtilizadorid() {
 				return utilizadorid;
 			}
 			
-			public Date getDtnasc() {
+			public String getDtnasc() {
 				return dtnasc;
 			}
 			
