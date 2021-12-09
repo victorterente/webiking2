@@ -19,6 +19,14 @@ public class EstadoEvento {
    
    
    
+    public void setEstadoeventoid(int estadoeventoid) {
+        this.estadoeventoid = estadoeventoid;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public int getEstadoeventoid() {
         return estadoeventoid;
     }

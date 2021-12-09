@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Evento;
@@ -27,6 +29,13 @@ public class EventoController {
 
     }
 
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Evento saveUtilizador(@RequestBody Evento evento) {
+        Evento savedevento = eventoRepository.save(evento);
+        logger.info("Saving evento with id " + savedevento.getEventoid());
+        return savedevento;
+    }
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Optional<Evento> getEventoById(@PathVariable Integer id) {
         logger.info("Sending evento with id:"+ id);

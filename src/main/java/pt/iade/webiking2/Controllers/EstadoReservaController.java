@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.EstadoReserva;
@@ -28,6 +30,12 @@ public class EstadoReservaController {
 
     }
 
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public EstadoReserva saveUtilizador(@RequestBody EstadoReserva estadoreserva) {
+        EstadoReserva savedestadoreserva = estadoreservaRepository.save(estadoreserva);
+        logger.info("Saving EstadoReserva with id " + savedestadoreserva.getEstadoreservaid());
+        return savedestadoreserva;
+    }
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Optional<EstadoReserva> getEstadoReservaById(@PathVariable Integer id) {
         logger.info("Sending estadoreserva with id:"+ id);

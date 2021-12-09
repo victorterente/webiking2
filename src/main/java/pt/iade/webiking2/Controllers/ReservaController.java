@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Reserva;
@@ -25,6 +27,13 @@ public Iterable<Reserva> getReserva() {
     logger.info("Sending all reservas");
     
     return reservaRepository.findAll();
+}
+
+@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+public Reserva saveReserva(@RequestBody Reserva reserva) {
+    Reserva savedreserva = reservaRepository.save(reserva);
+    logger.info("Saving reserva with id " + savedreserva.getReservaid());
+    return savedreserva;
 }
 
 
