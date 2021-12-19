@@ -30,7 +30,7 @@ public class EventoController {
     }
 
 
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Evento saveUtilizador(@RequestBody Evento evento) {
         Evento savedevento = eventoRepository.save(evento);
         logger.info("Saving evento with id " + savedevento.getEventoid());
