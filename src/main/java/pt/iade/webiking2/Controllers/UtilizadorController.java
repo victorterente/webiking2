@@ -28,7 +28,7 @@ public class UtilizadorController {
         logger.info("Sending all utilizadores");
         return utilizadorRepository.findAll();
     }
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Utilizador saveUtilizador(@RequestBody Utilizador utilizador) {
         Utilizador savedutilizador = utilizadorRepository.save(utilizador);
         logger.info("Saving utilizador with id " + savedutilizador.getUtilizadorid());

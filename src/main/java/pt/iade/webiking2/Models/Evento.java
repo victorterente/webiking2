@@ -16,7 +16,7 @@ import javax.persistence.Table;
             @Column(name="evento_id") private int eventoid;
             @Column(name="evento_origem") private String origem;
             @Column(name="evento_destino") private String destino;
-            @Column(name="evento_participantes") private int participantes;
+            @Column(name="evento_organizador") private int organizador;
             @Column(name="evento_desc") private String descricao;
             
            
@@ -34,8 +34,8 @@ import javax.persistence.Table;
                 return destino;
             }
         
-            public int getParticipantes() {
-                return participantes;
+            public int getOrganizador() {
+                return organizador;
             }
            
             public String getDescricao() {
