@@ -33,7 +33,7 @@ public class UtilizadorController {
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody Utilizador utilizadorid) {
         logger.info("Registering utilizador with id " + utilizadorid.getUtilizadorid());
-        Integer inserted = utilizadorRepository.registerStudent(utilizadorid);
+        Integer inserted = utilizadorRepository.registerUtilizador(utilizadorid);
     return new Response(inserted+" registration created",utilizadorid);
     }
 

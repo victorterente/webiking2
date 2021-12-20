@@ -32,7 +32,7 @@ public class EventoController {
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody Evento eventoid) {
         logger.info("Registering utilizador with id " + eventoid.getEventoid());
-        Integer inserted = eventoRepository.registerStudent(eventoid);
+        Integer inserted = eventoRepository.registerevento(eventoid);
     return new Response(inserted+" registration created",eventoid);
     }
 
