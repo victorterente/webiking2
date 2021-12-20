@@ -19,7 +19,7 @@ public interface EventoRepository extends CrudRepository <Evento, Integer> {
     "evento_data, evento_desc)"+
     "values(:#{#evento.origem}, :#{#evento.destino}, "+
     ":#{#evento.organizador}, :#{#evento.data}"+
-    ", :#{#evento.desc} )", nativeQuery=true)
+    ", :#{#evento.descricao} )", nativeQuery=true)
 Integer registerStudent(@Param("evento") Evento evento);
 
  }
