@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Evento;
+import pt.iade.webiking2.Models.Exceptions.Response;
 import pt.iade.webiking2.Models.Repositories.EventoRepository;
 
 @RestController
@@ -28,14 +29,14 @@ public class EventoController {
         return eventoRepository.findAll();
 
     }
-    
-
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Evento saveUtilizador(@RequestBody Evento evento) {
-        Evento savedevento = eventoRepository.save(evento);
-        logger.info("Saving evento with id " + savedevento.getEventoid());
-        return savedevento;
+    public Response saveStudent(@RequestBody Evento eventoid) {
+        logger.info("Registering utilizador with id " + eventoid.getEventoid());
+        Integer inserted = eventoRepository.registerStudent(eventoid);
+    return new Response(inserted+" registration created",eventoid);
     }
+
+    
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Optional<Evento> getEventoById(@PathVariable Integer id) {
         logger.info("Sending evento with id:"+ id);

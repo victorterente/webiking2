@@ -18,10 +18,39 @@ import javax.persistence.Table;
             @Column(name="evento_destino") private String destino;
             @Column(name="evento_organizador") private int organizador;
             @Column(name="evento_desc") private String descricao;
+            @Column(name="evento_data") private String data;
             
            
            
            
+            public void setEventoid(int eventoid) {
+                this.eventoid = eventoid;
+            }
+
+            public void setOrigem(String origem) {
+                this.origem = origem;
+            }
+
+            public void setDestino(String destino) {
+                this.destino = destino;
+            }
+
+            public void setOrganizador(int organizador) {
+                this.organizador = organizador;
+            }
+
+            public void setDescricao(String descricao) {
+                this.descricao = descricao;
+            }
+
+            public String getData() {
+                return data;
+            }
+
+            public void setData(String data) {
+                this.data = data;
+            }
+
             public int getEventoid() {
                 return eventoid;
             }
