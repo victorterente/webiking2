@@ -17,7 +17,7 @@ import javax.persistence.Table;
             @Column(name="evento_origem") private String origem;
             @Column(name="evento_destino") private String destino;
             @Column(name="evento_organizador") private int organizador;
-            @Column(name="evento_desc") private String descricao;
+            @Column(name="evento_descricao") private String descricao;
             @Column(name="evento_data") private String data;
             
            
