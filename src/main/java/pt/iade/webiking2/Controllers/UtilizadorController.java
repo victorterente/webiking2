@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Utilizador;
+import pt.iade.webiking2.Models.Exceptions.Response;
 import pt.iade.webiking2.Models.Repositories.UtilizadorRepository;
 
 @RestController
@@ -29,9 +30,16 @@ public class UtilizadorController {
         return utilizadorRepository.findAll();
     }
     
-    
-    
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response saveStudent(@RequestBody Utilizador utilizadorid) {
+        logger.info("Registering utilizador with id " + utilizadorid.getUtilizadorid());
+        Integer inserted = utilizadorRepository.registerStudent(utilizadorid);
+    return new Response(inserted+" registration created",utilizadorid);
+    }
+
+
+
+    @PostMapping(path = "/new/id/ez", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Utilizador> Signuputilizador(@PathVariable String nome, String email, String pass, String dtnasc, char genero, int telemovel ) {
     
         return utilizadorRepository.SignUpUtilizador(nome, email, pass, dtnasc, genero, telemovel );
