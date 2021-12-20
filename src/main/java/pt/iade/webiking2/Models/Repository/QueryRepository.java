@@ -15,10 +15,12 @@ public interface QueryRepository extends CrudRepository<Utilizador, Integer> {
 
     @Query(value = "select * from evento where evento_id = :id", nativeQuery = true)
     Iterable<String> evento_info(int id);
-
-    @Query(value = " select criar_utilizador(:nome,:morada,:genero,:data,:identificacao,:email,:pass, :num_card, :cvv ,:nome_cartao", nativeQuery = true)
-    Iterable<String> criar_utilizador(String nome,String morada,char genero,String data,int identificacao,String email, String pass, int num_card, int cvv, String nome_cartao);
    
-    
+    @Query(value = "insert into utilizador (utilizador_nome, utilizador_email, utilizador_pass,"+
+    "utilizador_dtnasc, utilizador_genero, utilizador_tlm)"+
+    "values(:nome, :email, "+
+    ":pass, :dtnasc"+
+    ", :genero, :telemovel )", nativeQuery=true)
+Iterable<Utilizador> SignUpUtilizador(String nome, String email, String pass, String dtnasc, char genero, int telelemovel );
 
 }

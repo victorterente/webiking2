@@ -28,7 +28,7 @@ public class EventoController {
         return eventoRepository.findAll();
 
     }
-
+    
 
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Evento saveUtilizador(@RequestBody Evento evento) {

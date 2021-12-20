@@ -28,13 +28,14 @@ public class UtilizadorController {
         logger.info("Sending all utilizadores");
         return utilizadorRepository.findAll();
     }
+    
+    
+    
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Utilizador saveUtilizador(@RequestBody Utilizador utilizador) {
-        Utilizador savedutilizador = utilizadorRepository.save(utilizador);
-        logger.info("Saving utilizador with id " + savedutilizador.getUtilizadorid());
-        return savedutilizador;
+    public Iterable<Utilizador> Signuputilizador(@PathVariable String nome, String email, String pass, String dtnasc, char genero, int telemovel ) {
+    
+        return utilizadorRepository.SignUpUtilizador(nome, email, pass, dtnasc, genero, telemovel );
     }
-
    
    
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
