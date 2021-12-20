@@ -13,7 +13,7 @@ public interface UtilizadorRepository extends CrudRepository <Utilizador, Intege
     "utilizador_dtnasc, utilizador_genero, utilizador_tlm)"+
     "values(:#{#utilizador.nome}, :#{#utilizador.email}, "+
     ":#{#utilizador.pass}, :#{#utilizador.dtnasc}"+
-    ", :#{#utilizador.genero}, :#{#utilizador.tlm} )", nativeQuery=true)
+    ", :#{#utilizador.genero}, :#{#utilizador.telemovel} )", nativeQuery=true)
 Integer registerStudent(@Param("utilizador") Utilizador utilizador);
 
 
