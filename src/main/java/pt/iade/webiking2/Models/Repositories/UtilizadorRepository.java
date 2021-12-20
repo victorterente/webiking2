@@ -10,7 +10,7 @@ public interface UtilizadorRepository extends CrudRepository <Utilizador, Intege
 
 
     @Query(value="insert into utilizador (utilizador_nome, utilizador_email, utilizador_pass,"+
-    "utilizador_dtnasc, utilizador_genero, utilizador_tlm)"+
+    "utilizador_dtnasc, utilizador_genero, utilizador_telemovel)"+
     "values(:#{#utilizador.nome}, :#{#utilizador.email}, "+
     ":#{#utilizador.pass}, :#{#utilizador.dtnasc}"+
     ", :#{#utilizador.genero}, :#{#utilizador.telemovel} )", nativeQuery=true)
@@ -22,7 +22,7 @@ Integer registerStudent(@Param("utilizador") Utilizador utilizador);
 
 
     @Query(value = "insert into utilizador (utilizador_nome, utilizador_email, utilizador_pass,"+
-    "utilizador_dtnasc, utilizador_genero, utilizador_tlm)"+
+    "utilizador_dtnasc, utilizador_genero, utilizador_telemovel)"+
     "values(:nome, :email, "+
     ":pass, :dtnasc"+
     ", :genero, :telemovel);", nativeQuery=true)
