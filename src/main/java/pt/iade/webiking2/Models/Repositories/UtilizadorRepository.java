@@ -1,5 +1,8 @@
 package pt.iade.webiking2.Models.Repositories;
 
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -8,7 +11,7 @@ import pt.iade.webiking2.Models.Utilizador;
 
 public interface UtilizadorRepository extends CrudRepository <Utilizador, Integer> {
 
-
+    @Modifying @Transactional
     @Query(value="insert into utilizador (utilizador_nome, utilizador_email, utilizador_pass,"+
     "utilizador_dtnasc, utilizador_genero, utilizador_telemovel)"+
     "values(:#{#utilizador.nome}, :#{#utilizador.email}, "+
