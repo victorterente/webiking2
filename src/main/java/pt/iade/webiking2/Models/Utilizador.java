@@ -20,7 +20,7 @@ public class Utilizador {
 			@Column(name="utilizador_genero") private String genero;
 			@Column(name="utilizador_email") private String email;
 			@Column(name="utilizador_pass") private String pass;
-			@Column(name="utilizador_tlm") private int telemovel;
+			@Column(name="utilizador_telemovel") private int telemovel;
 			
 			
 
