@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Reserva;
+import pt.iade.webiking2.Models.Exceptions.Response;
 import pt.iade.webiking2.Models.Repositories.ReservaRepository;
 
 
@@ -29,13 +30,12 @@ public Iterable<Reserva> getReserva() {
     return reservaRepository.findAll();
 }
 
-@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-public Reserva saveReserva(@RequestBody Reserva reserva) {
-    Reserva savedreserva = reservaRepository.save(reserva);
-    logger.info("Saving reserva with id " + savedreserva.getReservaid());
-    return savedreserva;
-}
-
+@PostMapping(path = "/newC", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response saveStudent(@RequestBody Reserva reservaid) {
+        logger.info("Registering reserva with id " + reservaid.getReservaid());
+        Integer inserted = reservaRepository.registerReservaC(reservaid);
+    return new Response(inserted+" registration created",reservaid);
+    }
 
 
 @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)

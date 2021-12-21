@@ -15,19 +15,34 @@ import javax.persistence.Table;
         @Id @GeneratedValue
             (strategy = GenerationType.IDENTITY)
             @Column(name="reserva_id") private int reservaid;           
-            @Column(name="reserva_preco") private double preco;
+            @Column(name="reser_utilizador_id") private int reservautilizadorid;
+            @Column(name="reser_bicicleta_id") private int reservabicicletaid;
            
-
-            
-            public Reserva() {}
-
+           
+           
+        
             public int getReservaid() {
                 return reservaid;
             }
-
-            public double getPreco() {
-                return preco;
+            public void setReservaid(int reservaid) {
+                this.reservaid = reservaid;
             }
+            public int getReservautilizadorid() {
+                return reservautilizadorid;
+            }
+            public void setReservautilizadorid(int reservautilizadorid) {
+                this.reservautilizadorid = reservautilizadorid;
+            }
+            public int getReservabicicletaid() {
+                return reservabicicletaid;
+            }
+            public void setReservabicicletaid(int reservabicicletaid) {
+                this.reservabicicletaid = reservabicicletaid;
+            }
+           
+
+            
+           
 
             
            

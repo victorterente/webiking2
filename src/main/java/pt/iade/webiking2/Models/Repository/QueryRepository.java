@@ -15,6 +15,12 @@ public interface QueryRepository extends CrudRepository<Utilizador, Integer> {
 
     @Query(value = "select * from evento where evento_id = :id", nativeQuery = true)
     Iterable<String> evento_info(int id);
+
+
+
+
+    @Query(value = "select * from utilizador where utilizador_nome = :nome", nativeQuery = true)
+    Iterable<String> utilizador_reserva(String nome );
    
     
 
