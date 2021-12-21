@@ -11,7 +11,7 @@ public interface ReservaRepository extends CrudRepository <Reserva, Integer> {
 
    
     @Query(value="insert into reserva (reser_utilizador_id, reser_bicicleta_id)"+
-    "values(:reservautilizadorid, :reservabicicletaid = '2'}})", nativeQuery=true)
+    "values(:#{#reserva.reservautilizadorid}, :#{#reserva.reservabicicletaid}}})", nativeQuery=true)
 Integer registerReservaC(@Param("reserva") Reserva reserva);
 
 
