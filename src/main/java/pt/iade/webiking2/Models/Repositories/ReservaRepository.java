@@ -10,8 +10,7 @@ import pt.iade.webiking2.Models.Reserva;
 public interface ReservaRepository extends CrudRepository <Reserva, Integer> {
 
    
-    @Query(value="insert into reserva (reser_utilizador_id, reser_bicicleta_id)"+
-    "values(:#{#reserva.reservautilizadorid}, :#{#reserva.reservabicicletaid}}})", nativeQuery=true)
+    @Query(value="insert into reserva(reser_bicicleta_id, reser_utilizador_id) values ('2',:reservautilizadorid);", nativeQuery=true)
 Integer registerReservaC(@Param("reserva") Reserva reserva);
 
 
