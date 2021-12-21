@@ -17,10 +17,17 @@ import javax.persistence.Table;
             @Column(name="reserva_id") private int reservaid;           
             @Column(name="reser_utilizador_id") private int reservautilizadorid;
             @Column(name="reser_bicicleta_id") private int reservabicicletaid;
+            @Column(name="reser_estado_id") private int reservaestadoid;
            
            
            
         
+            public int getReservaestadoid() {
+                return reservaestadoid;
+            }
+            public void setReservaestadoid(int reservaestadoid) {
+                this.reservaestadoid = reservaestadoid;
+            }
             public int getReservaid() {
                 return reservaid;
             }

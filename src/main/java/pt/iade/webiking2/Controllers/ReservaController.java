@@ -30,8 +30,8 @@ public Iterable<Reserva> getReserva() {
     return reservaRepository.findAll();
 }
 
-@PostMapping(path = "/newC", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response saveStudent(@RequestBody Reserva reservaid) {
+@PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response saveReserva(@RequestBody Reserva reservaid) {
         logger.info("Registering reserva with id " + reservaid.getReservaid());
         Integer inserted = reservaRepository.registerReservaC(reservaid);
     return new Response(inserted+" registration created",reservaid);

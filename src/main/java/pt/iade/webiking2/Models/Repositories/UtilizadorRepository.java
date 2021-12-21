@@ -19,7 +19,8 @@ public interface UtilizadorRepository extends CrudRepository <Utilizador, Intege
     ", :#{#utilizador.genero}, :#{#utilizador.telemovel} )", nativeQuery=true)
 Integer registerUtilizador(@Param("utilizador") Utilizador utilizador);
 
-
+@Query(value = "select utilizador_existe(:nome,:pass)", nativeQuery = true)
+    Iterable<String> Exite_utilizador(String nome, String pass);
 
 
 
