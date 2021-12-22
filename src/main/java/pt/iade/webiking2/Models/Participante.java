@@ -12,9 +12,19 @@ import javax.persistence.Table;
 public class Participante {
     @Id @GeneratedValue
     (strategy = GenerationType.IDENTITY)
-
+    @Column(name="participante_id") private int participanteid;
     @Column(name="part_even_id") private int eventoid;
-     @Column(name="part_util_id") private int participanteid;
+     @Column(name="part_util_id") private int utilizadorid;
+    
+    
+    
+    
+     public int getUtilizadorid() {
+        return utilizadorid;
+    }
+    public void setUtilizadorid(int utilizadorid) {
+        this.utilizadorid = utilizadorid;
+    }
     public int getEventoid() {
         return eventoid;
     }

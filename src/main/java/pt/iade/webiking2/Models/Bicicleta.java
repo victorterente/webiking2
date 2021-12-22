@@ -18,7 +18,32 @@ import javax.persistence.Table;
             @Column(name="bicicleta_desc") private String descricao;
             @Column(name="bicicleta_tipo") private String tipo;
             @Column(name="bicicleta_cor") private String cor;
+            @Column(name="bicicleta_preco") private String preco;
            
+
+            public void setBicicletaid(int bicicletaid) {
+                this.bicicletaid = bicicletaid;
+            }
+
+            public void setDescricao(String descricao) {
+                this.descricao = descricao;
+            }
+
+            public void setTipo(String tipo) {
+                this.tipo = tipo;
+            }
+
+            public void setCor(String cor) {
+                this.cor = cor;
+            }
+
+            public String getPreco() {
+                return preco;
+            }
+
+            public void setPreco(String preco) {
+                this.preco = preco;
+            }
 
             public int getBicicleta(){
 
