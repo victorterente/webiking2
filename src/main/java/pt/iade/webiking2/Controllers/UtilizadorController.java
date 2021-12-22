@@ -29,6 +29,8 @@ public class UtilizadorController {
         logger.info("Sending all utilizadores");
         return utilizadorRepository.findAll();
     }
+
+
     
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody Utilizador utilizadorid) {
@@ -37,8 +39,8 @@ public class UtilizadorController {
     return new Response(inserted+" registration created",utilizadorid);
     }
 
-    @GetMapping(path = "/nome/{nome:[.-z]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Utilizador> getUtilizador(@PathVariable String nome) {
+    @GetMapping(path = "/nome/{utilizador_nome}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Utilizador> getUtilizador(@PathVariable(value = "utilizador_nome") String nome) {
         logger.info("Sending all utilizadores with type" + nome);
         return utilizadorRepository.getUtilizadorNome(nome);
     }
