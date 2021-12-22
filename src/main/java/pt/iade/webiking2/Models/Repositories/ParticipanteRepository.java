@@ -13,7 +13,7 @@ public interface ParticipanteRepository  extends CrudRepository <Participante, I
 
 
     @Modifying @Transactional
-    @Query(value="insert into partcipante (part_even_id, part_util_id)"+
+    @Query(value="insert into participante (part_even_id, part_util_id)"+
     "values(:#{#participante.eventoid}, :#{#participante.utilizadorid} )", nativeQuery=true)
      Integer registerparticipante(@Param("participante") Participante participante);
 
