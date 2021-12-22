@@ -15,8 +15,7 @@ import javax.persistence.Table;
         @Id @GeneratedValue
             (strategy = GenerationType.IDENTITY)
             @Column(name="reserva_id") private int reservaid;           
-            @Column(name="reser_utilizador_id") private int reservautilizadorid;
-                         
+            @Column(name="reser_utilizador_id") private int reservautilizadorid;            
             @Column(name="reser_bicicleta_id") private int reservabicicletaid;
             
 

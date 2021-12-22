@@ -33,7 +33,7 @@ public Iterable<Reserva> getReserva() {
 @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveReserva(@RequestBody Reserva reservaid) {
         logger.info("Registering reserva with id " + reservaid.getReservaid());
-        Integer inserted = reservaRepository.registerReservaC(reservaid);
+        Integer inserted = reservaRepository.registerreserva(reservaid);
     return new Response(inserted+" registration created",reservaid);
     }
 
