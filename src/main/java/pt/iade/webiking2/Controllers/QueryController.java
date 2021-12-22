@@ -27,6 +27,9 @@ public class QueryController {
         return queryRepository.utilizador_info(email,pass);
     }
 
+
+
+   
     @GetMapping(path = "/evento_info/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<String> get_evento_info(@PathVariable("id") int id) {
         logger.info("Sending bio from route id:" + id);

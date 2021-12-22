@@ -19,6 +19,7 @@ import javax.persistence.Table;
             @Column(name="reser_bicicleta_id") private int reservabicicletaid;
             
 
+          
             public int getReservaid() {
                 return reservaid;
             }
