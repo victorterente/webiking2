@@ -22,7 +22,7 @@ Integer registerUtilizador(@Param("utilizador") Utilizador utilizador);
 @Query(value = "select utilizador_existe(:nome,:pass)", nativeQuery = true)
     Iterable<String> Exite_utilizador(String nome, String pass);
 
-    Iterable<Utilizador> findByNome(String nome);
+    Iterable<String> findByNome(String nome);
 
     @Query(value = "insert into utilizador (utilizador_nome, utilizador_email, utilizador_pass,"+
     "utilizador_dtnasc, utilizador_genero, utilizador_telemovel)"+

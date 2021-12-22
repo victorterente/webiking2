@@ -40,7 +40,7 @@ public class UtilizadorController {
     }
 
     @GetMapping(path = "/nome/{utilizador_nome}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Utilizador> getUtilizador(@PathVariable(value = "utilizador_nome") String nome) {
+    public Iterable<String> getUtilizador(@PathVariable(value = "utilizador_nome") String nome) {
         logger.info("Sending all utilizadores with type" +nome);
         return utilizadorRepository.findByNome(nome);
     }
