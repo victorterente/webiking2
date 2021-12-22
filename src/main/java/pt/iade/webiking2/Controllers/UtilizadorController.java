@@ -46,12 +46,6 @@ public class UtilizadorController {
     }
 
 
-    @PostMapping(path = "/new/id/ez", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Utilizador> Signuputilizador(@PathVariable String nome, String email, String pass, String dtnasc, char genero, int telemovel ) {
-    
-        return utilizadorRepository.SignUpUtilizador(nome, email, pass, dtnasc, genero, telemovel );
-    }
-   
    
     @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Optional<Utilizador> getUtilizadorById(@PathVariable Integer id) {
