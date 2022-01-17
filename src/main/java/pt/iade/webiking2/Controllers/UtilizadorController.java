@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pt.iade.webiking2.Models.Utilizador;
+import pt.iade.webiking2.Models.Exceptions.NotFoundException;
 import pt.iade.webiking2.Models.Exceptions.Response;
 import pt.iade.webiking2.Models.Repositories.UtilizadorRepository;
 
@@ -30,6 +31,15 @@ public class UtilizadorController {
         return utilizadorRepository.findAll();
     }
 
+    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Utilizador getUtilizador(@PathVariable int id) {
+        logger.info("Sending user with id " + id);
+        Optional<Utilizador> _utilizador = utilizadorRepository.findById(id);
+        if (!_utilizador.isPresent()) throw
+                new NotFoundException("" + id, "User", "id");
+        else
+            return _utilizador.get();
+    }
 
     
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
