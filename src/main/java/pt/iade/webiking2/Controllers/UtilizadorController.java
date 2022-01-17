@@ -31,8 +31,8 @@ public class UtilizadorController {
         return utilizadorRepository.findAll();
     }
 
-    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Utilizador getUtilizadorbyid(@PathVariable int utilizadorid) {
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Utilizador getADD(@PathVariable int utilizadorid) {
         logger.info("Sending user with id " + utilizadorid);
         Optional<Utilizador> _utilizador = utilizadorRepository.findById(utilizadorid);
         if (!_utilizador.isPresent()) throw
