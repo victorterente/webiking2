@@ -32,11 +32,11 @@ public class UtilizadorController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Utilizador getUtilizador(@PathVariable int id) {
-        logger.info("Sending user with id " + id);
-        Optional<Utilizador> _utilizador = utilizadorRepository.findById(id);
+    public Utilizador getUtilizador(@PathVariable int utilizadorid) {
+        logger.info("Sending user with id " + utilizadorid);
+        Optional<Utilizador> _utilizador = utilizadorRepository.findById(utilizadorid);
         if (!_utilizador.isPresent()) throw
-                new NotFoundException("" + id, "User", "id");
+                new NotFoundException("" + utilizadorid, "User", "id");
         else
             return _utilizador.get();
     }
