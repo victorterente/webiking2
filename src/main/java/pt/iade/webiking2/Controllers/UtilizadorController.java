@@ -31,10 +31,14 @@ public class UtilizadorController {
         return utilizadorRepository.findAll();
     }
 
-    @GetMapping(path = "/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Utilizador> getBicicletaId(@PathVariable Integer id) {
-        logger.info("Sending utilizador with id:"+ id);
-        return utilizadorRepository.findById(id);
+    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Utilizador getUtilizadorbyid(@PathVariable int utilizadorid) {
+        logger.info("Sending user with id " + utilizadorid);
+        Optional<Utilizador> _utilizador = utilizadorRepository.findById(utilizadorid);
+        if (!_utilizador.isPresent()) throw
+                new NotFoundException("" + utilizadorid, "User", "id");
+        else
+            return _utilizador.get();
     }
 
     
